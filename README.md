@@ -4,6 +4,13 @@ Welcome to `fossmyanmar/BYOD`! This repository is a curated collection of resour
 
 The aim is to gather useful links, tools, and guides to help you craft a Linux environment perfectly tailored to your needs.
 
+
+
+---
+[Slides](https://docs.google.com/presentation/d/1e6lfmVv73K0ROJLFIlxtkPAXmsJjr3e5imcnAasIZag/edit?usp=sharing)
+---
+
+
 ## Table of Contents
 
 - [Custom Linux Desktop Managers & Window Managers](#custom-linux-desktop-managers--window-managers)

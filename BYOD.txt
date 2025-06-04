@@ -1,0 +1,300 @@
+BYOD Bring your own distro
+Linux Community - Chit Chat
+https://github.com/fossmyanmar/BYOD/
+
+Agenda - ဒီနေ့ ဘာတွေပြောကြမလဲ?
+
+
+BYOD ဆိုတာဘာလဲ? (What is BYOD?)
+ဘာကြောင့် BYOD ကို စဉ်းစားသင့်သလဲ? (Why BYOD? Benefits & Challenges)
+BYOD အသုံးပြုပုံ နမူနာများ (Personal vs. Enterprise/OEM)
+Security ရှုထောင့်နဲ့ BYOD (Security Aspects)
+စိတ်ဝင်စားစရာ Custom Distro နမူနာများ (Real-World Examples)
+Custom Distro တွေကို ဘယ်လိုတည်ဆောက်ကြသလဲ? (Tools Teaser)
+ကိုယ်ပိုင် Setting များအတွက် Dotfiles (Dotfiles Teaser)
+ရှေ့ဆက်လုပ်သွားမယ့် အစီအစဉ်များ (Upcoming Hands-on Labs)
+မေးခွန်းနှင့်အဖြေ (Q&A)
+
+
+BYOD ဆိုတာဘာလဲ? (What is BYOD?)
+
+Definition: ကိုယ်ပိုင်စိတ်ကြိုက်ပြင်ဆင်ထားသော သို့မဟုတ် ရွေးချယ်ထားသော Linux Distro ကို အလုပ်၊ ကိုယ်ရေးကိုယ်တာအတွက် ယူဆောင်အသုံးပြုခြင်း။
+Core Idea: "One size fits all" မဖြစ်နိုင်တော့သော ခေတ်တွင် ကိုယ်ပိုင်လိုအပ်ချက်နှင့် အကိုက်ညီဆုံး Environment ကို ဖန်တီးအသုံးပြုခြင်း။
+Keywords: Control (ထိန်းချုပ်နိုင်မှု), Flexibility (ပြောင်းလွယ်ပြင်လွယ်ရှိမှု), Familiarity (ရင်းနှီးကျွမ်းဝင်မှု)။
+
+BYOD ရဲ့ အားသာချက်များ (Advantages of BYOD)
+
+Control & Customization: ကိုယ်ကြိုက်တဲ့ Tools, Apps, Settings အပြည့်အဝ ထိန်းချုပ်နိုင်ခြင်း။
+Productivity: ကိုယ်နဲ့ရင်းနှီးပြီးသား Environment မှာ အလုပ်လုပ်ရလို့ ပိုမြန်ဆန်ထိရောက်ခြင်း။
+Familiarity: Distro အသစ်သင်ယူနေရတဲ့ အချိန်ကုန်သက်သာခြင်း။
+Specific Needs: ကိုယ့်လုပ်ငန်းအတွက် လိုအပ်တဲ့ Software/Library တွေ ကြိုတင်ထည့်သွင်းထားနိုင်ခြင်း (ဥပမာ - Docker, K8s client tools)။
+Offline Capability: Internet မလိုဘဲ အသုံးပြုနိုင်အောင် ကြိုတင်ပြင်ဆင်ထားနိုင်ခြင်း။
+Cost-Effectiveness (for Orgs): အချို့သော Commercial OS License ကုန်ကျစရိတ် သက်သာနိုင်ခြင်း (Open Source ကို အားပြုလျှင်)။
+Learning & Experimentation: ကိုယ်ပိုင် Distro တည်ဆောက်ခြင်းဖြင့် Linux Internals များကို ပိုမိုနားလည်လာခြင်း။
+
+
+BYOD ရဲ့ စိန်ခေါ်မှုများ (Challenges of BYOD)
+Standardization (for Orgs): အဖွဲ့အစည်းအတွင်းမှာ Distro မျိုးစုံနေပါက Support လုပ်ရခက်ခဲခြင်း၊ Compatibility ပြဿနာများ။
+Security Risks (if unmanaged): ကိုယ်ပိုင်ယူလာတဲ့ Distro က Security Patch မလုပ်ထားရင်၊ အားနည်းချက် ပါလာရင် အဖွဲ့အစည်းအတွက် အန္တရာယ်ရှိနိုင်ခြင်း။ (backdoor, zeroday)
+Support Burden (for Orgs): IT Department အနေနဲ့ Distro အများအပြားကို Support ပေးရရင် ဝန်ပိနိုင်ခြင်း။
+Complexity: Custom Distro တည်ဆောက်ထိန်းသိမ်းရတာ ရှုပ်ထွေးနိုင်ခြင်း (အထူးသဖြင့် အစပြုသူများအတွက်)။
+Updates & Maintenance: ကိုယ်တိုင် Custom Distro ကို ပုံမှန် Update လုပ်ပေးနေဖို့ လိုအပ်ခြင်း။ (own repo, landscape)
+
+
+
+TARGET
+Personal 
+[without credential]Fully Customize
+OEM
+[Drivers and Apps]Brand Customize
+Enterprise[Drivers and Apps - AD - Remote]Brand and Roles Customize
+
+BYOD for Personal Use
+ကိုယ်ပိုင် Laptop/Desktop အတွက် စိတ်ကြိုက် Distro (Minimalist or Feature-rich)။
+Dotfiles များဖြင့် Configuration Management (နောက်ပိုင်း Lab အတွက် Teaser)။
+Hobbyists, Developers, Power Users များအတွက် အထူးသင့်တော်။
+ကိုယ်ပိုင် Projects, Learning, Experimentation အတွက် အကောင်းဆုံး။
+
+BYOD for Enterprise / OEM
+Enterprise (ကုမ္ပဏီ/အဖွဲ့အစည်း):
+Developer Teams: Pre-configured Dev Environment (e.g., specific SDKs, Docker, K8s tools)။
+Corporate Standard: LDAP/SSO Integration, VPN access, Security tools ကြိုထည့်ထားသော Distro။
+Kiosk Systems / Special Purpose Machines။
+OEM (Original Equipment Manufacturer):
+Hardware Optimization: System76 & Pop!_OS ကဲ့သို့ Hardware နှင့် အကောင်းဆုံးကိုက်ညီအောင် ပြုလုပ်ထားခြင်း။
+Regional Customization: Ubuntu Kylin (China), Deepin ကဲ့သို့ Language/UX ကို Target Market အတွက် ပြင်ဆင်ခြင်း။
+
+
+Security in BYOD - ပိုကောင်းနိုင်သလား?
+Increased User Awareness: ကိုယ်တိုင် Customize လုပ်ထား၍ System ကို ပိုနားလည်ပြီး Security ပိုဂရုစိုက်တတ်ခြင်း။
+Minimalism = Reduced Attack Surface: မလိုအပ်တဲ့ Services/Packages များ လျှော့ချထားနိုင်ခြင်း။
+Custom Hardening: Security Hardening Scripts, Best Practices များ ကိုယ်တိုင်ထည့်သွင်းနိုင်ခြင်း။
+Proactive Patching: ကိုယ်တိုင် Maintain လုပ်ပါက Security Updates များကို လျင်မြန်စွာ Install လုပ်နိုင်ခြင်း (Requires user diligence)။
+Important Caveat: ကောင်းမွန်စွာ စီမံခန့်ခွဲထားသော BYOD မှသာ ဤအကျိုးကျေးဇူးများ ရရှိနိုင်။ 
+စီမံခန့်ခွဲမှုမရှိသော BYOD သည် Security Risk ပိုများစေနိုင်။
+
+
+ Real-World Examples: Desktop Flavors & Lightweight Distros
+Ubuntu Official Flavors:
+Kubuntu (KDE Plasma): Feature-rich, highly customizable.
+Xubuntu (XFCE): Lightweight, stable, classic desktop feel.
+Lubuntu (LXQt): Extremely lightweight, suitable for older hardware.
+Other Lightweight Options:
+Openbox, i3, AwesomeWM - Resource နည်းသော စက်များ၊ Performance ဦးစားပေးသူများအတွက်။
+
+
+
+Real-World Examples: Purpose-Driven Distros
+Ubuntu Studio:
+For: Multimedia Production (Audio, Video, Graphics)
+Features: Low-latency kernel, pre-installed creative applications.
+OSGeoLive:
+For: Geospatial Analysis & GIS
+Features: Comprehensive suite of open-source geospatial software.
+
+
+Real-World Examples: Language, Region, Community
+Language/Region Focus:
+Ubuntu Kylin (Optimized for Chinese users)
+Deepin (Visually appealing, developed in China)
+Runtu (Russian-speaking community)
+Community/Philosophy Driven:
+Zorin OS (Windows-like interface, easy transition for new Linux users, Business Plan)
+Pop!_OS (By System76, for developers & STEM professionals, good NVIDIA support, OEM)
+
+
+
+
+
+
+Real-World Examples: Past, Niche & Specialized
+Corporate Internal / Historical:
+gOS (Early cloud-focused OS with Google Apps integration)
+Goobuntu (Google's internal Ubuntu-based OS)
+Religious/Philosophical Communities (Focus on technical customization for community needs):
+Ubuntu Christian Edition (UbuntuCE): Software for Christian users.
+Sabily (Formerly Ubuntu Muslim Edition): Islamic software and tools.
+
+
+
+
+Custom Distro တွေကို ဘယ်လိုတည်ဆောက်ကြသလဲ? (Tools Teaser)
+The Spectrum of Customization:
+From Scratch: Linux From Scratch (LFS) - Ultimate control, deep learning. (Very advanced)
+Building Blocks: debootstrap & chroot - Crafting a base Debian/Ubuntu system. (Scriptable, good for minimal systems)
+User-Friendly Customization: Cubic (Custom Ubuntu ISO Creator) - GUI tool for customizing Ubuntu ISOs. (Great for upcoming labs!)
+Advanced Live Systems: live-build (Debian) - Powerful script-based framework.
+Kernel Tuning: Customizing the kernel for specific needs (drivers, performance). (Advanced)
+
+Debootstrap + Chroot သုံးပြီး အခွေထုတ်တာနဲ့ Cubic သုံးပြီး အခွေထုတ်တာက ISO ထွက်သည်အထိ ပြပေးပါမယ်။LFS အတွက်ကတော့ နောက်တပတ်ကျမှ အကြမ်းဖြင်း ထည့်ပေးပါမယ်Live-build နဲ့ ကတော့ Demo ပြပေးပါမယ်။
+
+BYOD for Servers (Brief Mention)
+Minimal Server Images: No GUI, only essential services.
+Pre-configured Services: Web servers (Apache/Nginx), Database servers, Docker/K8s nodes.
+Optimized Kernel Parameters: For network performance, specific workloads.
+Security Hardened Configurations: Tailored for specific server roles (e.g., web server, mail server).
+
+Server-side မှာလည်း BYOD concept ရှိ၊ ဒါပေမဲ့ ဒီနေ့ focus က Desktop/Personal use ဖြစ်ပါတယ်။ ဒါကလည်း ကျယ်ပြန့်တဲ့ ခေါင်းစဉ်ဖြစ်လို့ နောက်မှ သီးသန့်ဆွေးနွေးနိုင်ကြောင်း ပြောခဲ့ပါတယ်။
+ဥပမာ seed, ansible, packer, tf, kickstart, preseed, cloud-init
+
+Thx Wai Yan Win Htain
+
+Personalization & Portability: Dotfiles (Teaser) [WIP]
+What are Dotfiles? Configuration files in your home directory (e.g., .bashrc, .vimrc, .gitconfig, DE settings).
+Why are they important?
+Consistency: Same environment across multiple machines/distros.
+Portability: Easily move your settings.
+Automation: Version control (Git) and script setup.
+BYOD Context: Recreate your perfect setup quickly on any new (custom) distro.
+
+နောက်တပတ်တွင် ထည့်ပြောရန်## Dotfile
+https://github.com/owl4ce/dotfiles
+https://github.com/siduck/dotfiles/tree/openbox
+https://github.com/Amitabha37377/Awful-DOTS/tree/topbar_dock
+https://github.com/Amitabha37377/Awful-DOTS
+https://star.is-a.dev/projects/awm
+https://github.com/elenapan/dotfiles
+https://github.com/AlphaTechnolog/dotfiles/tree/openbox
+
+
+## manage your dotfiles
+https://tech-intern.github.io/dotfile/
+https://dotfiles.github.io/utilities/
+https://www.chezmoi.io/comparison-table/
+https://yadm.io/
+
+
+1nject W1nd0ws Huhhhh !_!
+nLite [xp]
+NTLite [7,8,10]
+Windows Unattended CD Creator
+WinFuture XP-ISO-Builder [DE version]
+
+W1nd0ws
+manintheit.org
+www.angusj.com
+www.askvg.com
+www.ntlite.com
+memstechtips/UnattendedWinstall
+schneegans.de
+alternativeto.net
+www.vladan.fr
+www.vladan.fr
+www.rainmeter.net
+www.stardock.com
+alfinauzikri/WinCustom
+
+
+Q&A - မေးခွန်းများနှင့် အဖြေ
+သာမန် သုံးဖူးရုံနဲ့ အခွေထုတ်နိုင်မလား - ရတယ်
+ဘာတွေ သိထားဖို့လိုမလဲ- bash အခြေခံရှိရင် ပိုကောင်းမယ်။- gnome, kde, i3, openbox တို့ dock တို့ icon တို့ ရှာထားရင် လှလှ ပပ ပြင်ဆင်လို့ရမယ်။- ပြောတဲ့အတိုင်း လိုက်လုပ်မယ်ဆိုရင် ရှေ့က လုပ်ပြထားတဲ့အတိုင်း OS ရမယ်။
+
+Key Takeaways & What's Next?
+Recap BYOD Benefits: Flexibility, Control, Productivity, Personalization.
+Upcoming Hands-on Lab Series:
+Building your own custom Ubuntu-based ISO (using Cubic). [fast and easy]
+Exploring tools like debootstrap (concepts). [mid level]
+Managing your configurations with Dotfiles. [for everyone]
+Q&A and problem-solving for your custom builds. [why and what cubic, LFS, remaster, bootstrap ]
+What to Expect: Just click and collect your iso, Practical skills, deeper Linux understanding, fun!
+https://github.com/fossmyanmar/BYOD/
+နောက်တပတ် ဆက်ရန်
+
+# Custom DM WM
+
+## Openbox
+https://github.com/leomarcov/debian-openbox/
+https://github.com/addy-dclxvi/openbox-theme-collections
+https://github.com/zakuradev/openbox-themes
+https://github.com/terroo/openbox-themes/tree/main
+
+## Dotfile
+https://github.com/owl4ce/dotfiles
+https://github.com/siduck/dotfiles/tree/openbox
+https://github.com/Amitabha37377/Awful-DOTS/tree/topbar_dock
+https://github.com/Amitabha37377/Awful-DOTS
+https://star.is-a.dev/projects/awm
+https://github.com/elenapan/dotfiles
+https://github.com/AlphaTechnolog/dotfiles/tree/openbox
+
+
+## manage your dotfiles
+https://tech-intern.github.io/dotfile/
+https://dotfiles.github.io/utilities/
+https://www.chezmoi.io/comparison-table/
+https://yadm.io/
+
+## Polybar
+https://github.com/adi1090x/polybar-themes
+
+## Tint2 
+https://github.com/addy-dclxvi/tint2-theme-collections
+
+## Rofi
+https://github.com/newmanls/rofi-themes-collection
+https://github.com/adi1090x/rofi
+
+## Eww
+https://github.com/elkowar/eww
+https://github.com/adi1090x/widgets
+
+## Plymouth
+https://github.com/adi1090x/plymouth-themes
+
+## DM
+https://web-greeter-page.vercel.app/
+
+# Customize ISO
+## Cubic
+https://github.com/PJ-Singh-001/Cubic/wiki/Start-Page
+https://askubuntu.com/questions/1289947/how-i-can-customize-the-ubuntu-live-iso-installer-using-cubic-add-remove-and
+
+## debootstrap 
+https://github.com/mvallim/live-custom-ubuntu-from-scratch/
+https://github.com/Anduin2017/AnduinOS
+
+## LiveCD Ubuntu
+https://help.ubuntu.com/community/LiveCDCustomization
+https://help.ubuntu.com/community/InstallCDCustomization
+https://hamacker.wordpress.com/ubuntu-perfeito/crindo-seu-livecd/
+
+## Ubuntu Autoinstall 
+https://github.com/covertsh/ubuntu-autoinstall-generator
+https://github.com/covertsh/ubuntu-preseed-iso-generator
+https://www.pugetsystems.com/labs/hpc/How-To-Make-Ubuntu-Autoinstall-ISO-with-Cloud-init-2213/
+https://linuxconfig.org/how-to-write-and-perform-ubuntu-unattended-installations-with-autoinstall
+https://imagineer.in/blog/packer-build-for-ubuntu-20-04/
+https://manintheit.org/2021/03/18/ubuntu-autoinstall/
+
+
+# Windows Topics
+https://www.angusj.com/resourcehacker/
+https://www.askvg.com/list-of-a-few-locations-in-windows-xp-system-files-to-be-hacked-using-resource-hacker/
+https://www.ntlite.com/features/
+https://github.com/memstechtips/UnattendedWinstall
+https://schneegans.de/windows/unattend-generator/
+https://alternativeto.net/software/ntlite/
+https://www.vladan.fr/winreducer-8-nlite-alternative-windows8-and-windows7/
+https://www.vladan.fr/winreducer-for-w8-x-w10-can-customize-windows-iso/
+https://www.rainmeter.net/
+https://www.stardock.com/
+https://github.com/alfinauzikri/WinCustom
+
+
+Thank you!
+kokoye2007 [at] gmail [dot] com
+kokoye2007 [at] ubuntu [dot] com
+GitHub: kokoye2007
+Slides: slides.com/kokoye2007
+https://kokoye2007.github.io
+
+
+See you in the Lab
+01 Define the Vision & Scope (UI/UX and Target Audience)
+02 Select Build Methodology & Tools
+03 Implement Core System & Appearance Customizations.
+04 Generate the ISO, Thoroughly Test, and Iterate.
+
+
+
+
