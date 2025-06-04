@@ -140,8 +140,11 @@ Automating Ubuntu installations using cloud-init (autoinstall) or preseed files.
 Bookmarks file is available [BYOD.html](./BYOD.html)
 
 You can now import this file into your browser:
+```
   Chrome/Edge: Settings > Bookmarks > Import bookmarks and settings
+
   Firefox: Bookmarks > Manage Bookmarks > Import and Backup > Import Bookmarks from HTML
+```
 
 ## Contributing
 
