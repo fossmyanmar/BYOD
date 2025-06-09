@@ -9,7 +9,8 @@ The aim is to gather useful links, tools, and guides to help you craft a Linux e
 ---
 [Slides](https://docs.google.com/presentation/d/1e6lfmVv73K0ROJLFIlxtkPAXmsJjr3e5imcnAasIZag/edit?usp=sharing)
 ---
-
+[Discord](https://discord.gg/nbSFWXD6)
+---
 
 ## Table of Contents
 
