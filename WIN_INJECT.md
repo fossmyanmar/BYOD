@@ -1,5 +1,6 @@
 # Windows Topics
 - https://www.angusj.com/resourcehacker/
+- https://www.pelock.com/products/resource-cracker
 - https://www.askvg.com/list-of-a-few-locations-in-windows-xp-system-files-to-be-hacked-using-resource-hacker/
 - https://www.ntlite.com/features/
 - https://github.com/memstechtips/UnattendedWinstall
